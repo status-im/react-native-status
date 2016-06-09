@@ -1,4 +1,4 @@
-package com.statusim;
+package com.statusim.Jail;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
