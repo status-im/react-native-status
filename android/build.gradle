@@ -14,5 +14,6 @@ android {
 
 dependencies {
     compile 'com.facebook.react:react-native:0.16.+'
+    compile(name:'geth-android-16', ext:'aar')
 }
 

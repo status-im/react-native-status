@@ -4,8 +4,8 @@ import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
-import com.facebook.react.bridge.ReadableArray;
-import com.facebook.react.bridge.ReadableMap;
+import com.github.ethereum.go_ethereum.cmd.Geth;
+
 
 public class JailModule extends ReactContextBaseJavaModule {
 
@@ -19,20 +19,17 @@ public class JailModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void parse(String chatId, String js, Callback succ, Callback fail) {
-        succ.invoke("{\"commands\":{\"request-money\":" +
-                "{\"description\":\"olala!\",\"name\":\"request-money\"," +
-                "\"params\":{\"foo\":{\"type\":\"string\"}}}}," +
-                "\"responses\":{}}");
+    public void init(String js) {
+        Geth.initJail(js);
     }
 
     @ReactMethod
-    public void call(String chatId, ReadableArray path, ReadableMap params, Callback callback) {
-        callback.invoke("call");
+    public void parse(String chatId, String js, Callback succ) {
+        succ.invoke(Geth.parse(chatId, js));
     }
 
     @ReactMethod
-    public void addListener(String chatId, Callback callback) {
-        callback.invoke("addListener " + chatId);
+    public void call(String chatId, String path, String params, Callback callback) {
+        callback.invoke(Geth.call(chatId, path, params));
     }
 }
