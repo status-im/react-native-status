@@ -30,6 +30,8 @@ public class JailPackage implements ReactPackage {
             ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
+        // maybe it is not the best place, but it works
+        System.loadLibrary("statusgo");
         modules.add(new JailModule(reactContext));
 
         return modules;
