@@ -1,5 +1,7 @@
 package com.statusim.Jail;
 
+import android.app.Activity;
+import android.view.WindowManager;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -9,8 +11,11 @@ import com.github.status_im.status_go.Statusgo;
 
 public class JailModule extends ReactContextBaseJavaModule {
 
-    public JailModule(ReactApplicationContext reactContext) {
+    private Activity activity;
+
+    public JailModule(ReactApplicationContext reactContext, Activity activity) {
         super(reactContext);
+        this.activity = activity;
     }
 
     @Override
@@ -31,5 +36,35 @@ public class JailModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void call(String chatId, String path, String params, Callback callback) {
         callback.invoke(Statusgo.call(chatId, path, params));
+    }
+
+    @ReactMethod
+    public void setAdjustResize(){
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+            }
+        });
+    }
+
+    @ReactMethod
+    public void setAdjustPan(){
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                activity.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+            }
+        });
+    }
+
+    @ReactMethod
+    public void setSoftInputMode(final int mode){
+        activity.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                activity.getWindow().setSoftInputMode(mode);
+            }
+        });
     }
 }

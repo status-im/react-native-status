@@ -1,5 +1,6 @@
 package com.statusim.Jail;
 
+import android.app.Activity;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -14,6 +15,12 @@ import java.util.List;
  * Created by rasom on 07.06.16.
  */
 public class JailPackage implements ReactPackage {
+
+    private Activity activity;
+
+    public JailPackage(Activity activity){
+        this.activity = activity;
+    }
 
     @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
@@ -32,7 +39,7 @@ public class JailPackage implements ReactPackage {
 
         // maybe it is not the best place, but it works
         System.loadLibrary("statusgo");
-        modules.add(new JailModule(reactContext));
+        modules.add(new JailModule(reactContext, activity));
 
         return modules;
     }
