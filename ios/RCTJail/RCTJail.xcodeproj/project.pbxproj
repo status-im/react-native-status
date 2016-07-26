@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		206C9F3E1D474E910063E3E6 /* RCTJail.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 206C9F3D1D474E910063E3E6 /* RCTJail.h */; };
 		206C9F401D474E910063E3E6 /* RCTJail.m in Sources */ = {isa = PBXBuildFile; fileRef = 206C9F3F1D474E910063E3E6 /* RCTJail.m */; };
-		20B2DBFA1D47C6CE00427CD8 /* Statusgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B2DBF91D47C6CE00427CD8 /* Statusgo.framework */; };
+		20AB9EAE1D47CBF500E7FD9C /* Statusgo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20AB9EAD1D47CBF500E7FD9C /* Statusgo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,7 +30,7 @@
 		206C9F3A1D474E910063E3E6 /* libRCTJail.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTJail.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		206C9F3D1D474E910063E3E6 /* RCTJail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTJail.h; sourceTree = "<group>"; };
 		206C9F3F1D474E910063E3E6 /* RCTJail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTJail.m; sourceTree = "<group>"; };
-		20B2DBF91D47C6CE00427CD8 /* Statusgo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Statusgo.framework; sourceTree = "<group>"; };
+		20AB9EAD1D47CBF500E7FD9C /* Statusgo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Statusgo.framework; path = "../../../../../react-native-status/ios/Statusgo.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20B2DBFA1D47C6CE00427CD8 /* Statusgo.framework in Frameworks */,
+				20AB9EAE1D47CBF500E7FD9C /* Statusgo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +48,7 @@
 		206C9F311D474E910063E3E6 = {
 			isa = PBXGroup;
 			children = (
-				20B2DBF91D47C6CE00427CD8 /* Statusgo.framework */,
+				20AB9EAD1D47CBF500E7FD9C /* Statusgo.framework */,
 				206C9F3C1D474E910063E3E6 /* RCTJail */,
 				206C9F3B1D474E910063E3E6 /* Products */,
 			);
