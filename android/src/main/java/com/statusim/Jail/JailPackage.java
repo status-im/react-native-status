@@ -14,6 +14,8 @@ import java.util.List;
  * Created by rasom on 07.06.16.
  */
 public class JailPackage implements ReactPackage {
+    public JailPackage() {
+    }
 
     @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
